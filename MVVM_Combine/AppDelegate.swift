@@ -6,14 +6,30 @@
 //
 
 import UIKit
+import Sentry
+
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        SentrySDK.start { options in
+                options.dsn = "https://b4107a1592c84f4798f832157db6e8ba@sentry.vtvlive.vn/14"
+                options.debug = true
+                        options.enableAutoSessionTracking = true
+                        options.enableCrashHandler = true
+
+                        
+                options.tracesSampleRate = 1.0
+            }
+
+        SentrySDK.capture(message: "luyentestCrash")
         return true
     }
 

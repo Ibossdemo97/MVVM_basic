@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Foundation
+import CommonCrypto
 
 class ViewController: BaseViewController {
 
@@ -20,7 +22,16 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+//        let crypto = WebCrypto()
+//        let input = Data("U2FsdGVkX1/hcIiMnTPnmBbEfzNtNyxkGhyc1jO+IZD8c3kP4nz62fOVWaSTsmO03st58nmSS7S7ETiYLuQjZRGD6sTSvjHWxx7OOLNJtxZi1SvG6vrKAailL7v1+j0i8uvjcCNUmJkHDkLDkP6SMYJ/FxpOcRoUBoF6FATCjsvZNNRqep+PrmJPVBM2nErv1eAc73xSAtznKShC23xzNA8u+fdcuBJp3D1CAVaUb1cezEk4+IZ92i992YZmZKjdmtUPUtr8ZcBEYpqWFitoLR9Ccbr1kBuVUti6/HBRPNf6XoUk0gkj+G5EYnUp7BgzfZkgoXe1/+xbFFfBx7SK0GYeZvmoIEnKpS9RtCZ0GUgk6DTLzJ/ibB/81WATADhpEuA8yEhXXdTU5DqyWfLOMbAIS1zthEUpiAqg2bgwm1sI1xO8/IT68BgAUHl0X6uh638CzrrL96rpU6rG9Eu3+NZNSk8zUokT3Y+pQYp9KVUW6VE5FKdcGJL+EULoZ9CEqt0xTPhNpprfukwjzM3Lyg=".utf8)
+//        let key = "UD4WPukv3D122MWQMddUrNe)pn697MYmhg^b00b204fght"
+//        let iv = "???"
+//
+//        crypto.encrypt(data: input, key: key, iv: iv, callback: {(encrypted: Data?, error: Error?) in
+//            print(encrypted!)
+//        })
+
+
     }
 
     override func setupData() {
@@ -99,7 +110,7 @@ class ViewController: BaseViewController {
                 
                 if done {
                     let vc = HomeViewController()
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    self?.present(vc, animated: true)
                 } else {
                     self?.alert(title: "Check Login", message: "login failed")
                 }

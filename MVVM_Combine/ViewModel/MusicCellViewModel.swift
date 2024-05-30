@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+final class MusicCellViewModel {
+    var music: Music
+    
+    init(music: Music) {
+        self.music = music
+    }
+}
